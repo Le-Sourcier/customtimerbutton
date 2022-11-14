@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-library timer_button;
+library custom_timer_button;
 
 import 'dart:async';
 
@@ -20,8 +20,8 @@ const int aSec = 1;
 const String _secPostFix = 's';
 const String labelSplitter = " |  ";
 
-class TimerButton extends StatefulWidget {
-  /// Create a TimerButton button.
+class CustomTimerButton extends StatefulWidget {
+  /// Create a CustomTimerButton button.
   ///
   /// The [label], [onPressed], and [timeOutInSeconds]
   /// arguments must not be null.
@@ -77,7 +77,7 @@ class TimerButton extends StatefulWidget {
   ///height
   final double? height;
 
-  const TimerButton({
+  const CustomTimerButton({
     Key? key,
     required this.label,
     this.disabledLabel,
@@ -100,10 +100,10 @@ class TimerButton extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _TimerButtonState createState() => _TimerButtonState();
+  _CustomTimerButtonState createState() => _CustomTimerButtonState();
 }
 
-class _TimerButtonState extends State<TimerButton> {
+class _CustomTimerButtonState extends State<CustomTimerButton> {
   bool timeUpFlag = false;
   int timeCounter = 0;
 

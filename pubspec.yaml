@@ -1,7 +1,8 @@
 name: timerbutton
-description: A new Flutter package project.
+description: Cool flutter package of Time Button.
 version: 0.0.1
 homepage: https://github.com/Le-Sourcier/timerbutton
+documentation: https://github.com/Le-Sourcier/timerbutton/blob/main/README.md
 
 environment:
   sdk: '>=2.18.2 <3.0.0'
