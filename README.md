@@ -22,7 +22,7 @@ there are a number of properties that you can modify
 - borderRadius,
 - textAlign,
 - shape,
-- elevation <!-- default elevation is 2 -->
+- elevation
 - width,
 - height,
 
