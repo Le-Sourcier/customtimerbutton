@@ -117,11 +117,11 @@ class TimerButton extends StatelessWidget {
 ```
 </td>
 <td>
-<img src="https://github.com/Le-Sourcier/timerbutton/blob/main/images/1.png" alt='First Screen shoot'>
+<img src="https://github.com/Le-Sourcier/customtimerbutton/blob/main/images/1.png" alt='First Screen shoot'>
 <hr>
-<img src="https://github.com/Le-Sourcier/timerbutton/blob/main/images/1.png" alt='First Screen shoot'>
+<img src="https://github.com/Le-Sourcier/customtimerbutton/blob/main/images/2.png" alt='Second Screen shoot'>
 <hr>
-<img src="https://github.com/Le-Sourcier/timerbutton/blob/main/images/1.png" alt='First Screen shoot'>
+<img src="https://github.com/Le-Sourcier/customtimerbutton/blob/main/images/3.png" alt='Third Screen shoot'>
 </td>
 </tr>
 </table>
