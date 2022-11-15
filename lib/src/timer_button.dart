@@ -1,7 +1,5 @@
 // ignore_for_file: constant_identifier_names
 
-library custom_timer_button;
-
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
@@ -50,6 +48,9 @@ class CustomTimerButton extends StatefulWidget {
   /// activeTextStyle
   final TextStyle? activeTextStyle;
 
+  /// Button Style
+  final ButtonStyle? btnStyle;
+
   /// text alignement
   final TextAlign? textAlign;
 
@@ -77,6 +78,9 @@ class CustomTimerButton extends StatefulWidget {
   ///height
   final double? height;
 
+  ///Button controller
+  final MaterialStatesController? statesController;
+
   const CustomTimerButton({
     Key? key,
     required this.label,
@@ -96,6 +100,8 @@ class CustomTimerButton extends StatefulWidget {
     this.elevation = 2,
     this.width,
     this.height,
+    this.statesController,
+    this.btnStyle,
   }) : super(key: key);
 
   @override
@@ -180,11 +186,21 @@ class _CustomTimerButtonState extends State<CustomTimerButton> {
   Widget build(BuildContext context) {
     switch (widget.buttonType) {
       case ButtonType.MaterialButton:
-        return MaterialButton(
-          disabledColor: widget.disabledColor,
-          color: timeUpFlag ? widget.color : widget.disabledColor,
-          onPressed: timeUpFlag ? _onPressed : null,
-          child: _buildChild(),
+        return Card(
+          color:
+              timeUpFlag ? widget.color : widget.disabledColor.withOpacity(0.2),
+          shape: widget.shape,
+          child: MaterialButton(
+            elevation: timeUpFlag ? widget.elevation : 0,
+            disabledColor: widget.disabledColor,
+            color: timeUpFlag ? widget.color : widget.disabledColor,
+            onPressed: timeUpFlag ? _onPressed : null,
+            child: SizedBox(
+              width: widget.width,
+              height: widget.height,
+              child: _buildChild(),
+            ),
+          ),
         );
 
       case ButtonType.CupertinoButton:
@@ -204,27 +220,46 @@ class _CustomTimerButtonState extends State<CustomTimerButton> {
             ));
       case ButtonType.ElevatedButton:
         return ElevatedButton(
-            onPressed: timeUpFlag ? _onPressed : null,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: timeUpFlag ? widget.color : widget.disabledColor,
-            ),
-            child: _buildChild());
+          onPressed: timeUpFlag ? _onPressed : null,
+          statesController: widget.statesController,
+          style: ElevatedButton.styleFrom(
+            elevation: timeUpFlag ? widget.elevation : 0,
+            backgroundColor: timeUpFlag ? widget.color : widget.disabledColor,
+          ),
+          child: SizedBox(
+            width: widget.width,
+            height: widget.height,
+            child: _buildChild(),
+          ),
+        );
       case ButtonType.TextButton:
-        return TextButton(
+        return SizedBox(
+          width: widget.width,
+          height: widget.height,
+          child: TextButton(
+            statesController: widget.statesController,
             onPressed: _onPressed,
             style: TextButton.styleFrom(
               backgroundColor: timeUpFlag ? widget.color : widget.disabledColor,
             ),
-            child: _buildChild());
+            child: _buildChild(),
+          ),
+        );
       case ButtonType.OutlinedButton:
-        return OutlinedButton(
-            onPressed: timeUpFlag ? _onPressed : null,
-            style: OutlinedButton.styleFrom(
-              side: BorderSide(
-                color: timeUpFlag ? widget.color! : widget.disabledColor,
-              ),
+        return SizedBox(
+          width: widget.width,
+          height: widget.height,
+          child: Card(
+            elevation: timeUpFlag ? widget.elevation : 0,
+            color: Colors.transparent,
+            child: OutlinedButton(
+              statesController: widget.statesController,
+              onPressed: timeUpFlag ? _onPressed : null,
+              style: widget.btnStyle,
+              child: _buildChild(),
             ),
-            child: _buildChild());
+          ),
+        );
       default:
         return Container();
     }

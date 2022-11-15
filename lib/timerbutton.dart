@@ -1,3 +1,3 @@
 library timerbutton;
 
-export 'src/timerbutton.dart';
+export 'src/timer_button.dart';

@@ -60,8 +60,8 @@ class TimerButton extends StatelessWidget {
       ),
       body: Center(
         child: ctmTimeButtom(
-            text: 'Resend verification mail',
-            disableText: 'Resend in',
+            text: 'Click here',
+            disableText: 'Retry in',
             width: size(context).width * 0.53,
             onPressed: () {},
             time: 180,
