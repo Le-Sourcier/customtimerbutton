@@ -1,4 +1,4 @@
-name: custom_timer_button
+name: customtimerbutton
 description: Very simple customizable widgets allowing you to create very nice and super ergonomic miniuter buttons that deactivate after exerting pressure on it and reactivate automatically once the defined time has passed.
 version: 0.1.2
 homepage: https://github.com/Le-Sourcier/timerbutton
